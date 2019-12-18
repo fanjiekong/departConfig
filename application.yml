@@ -6,12 +6,12 @@ spring:
 ---
 spring:
   application:
-    name: abcmsc-config-dev
+    name: kfjmsc-config-dev
   profiles: dev
 
 
 ---
 spring:
   application:
-    name: abcmsc-config-test
+    name: kfjmsc-config-test
   profiles: test

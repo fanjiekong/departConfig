@@ -1,0 +1,47 @@
+#配置dev环境
+server:
+  port: 7070
+
+spring:
+  profiles: dev
+  #指定微服务对外暴露的名称
+  application:
+    name: kfjmsc-consumer-depart
+
+
+eureka:
+  instance:
+    prefer-ip-address: true  #暂时没整明白啥意思，true，false效果一样
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8400/eureka
+
+feign:
+  hystrix:
+    enabled: true
+
+
+---
+#配置test环境
+server:
+  port: 9090
+
+spring:
+  profiles: test
+  #指定微服务对外暴露的名称
+  application:
+    name: kfjmsc-consumer-depart
+
+
+eureka:
+  instance:
+    prefer-ip-address: true  #暂时没整明白啥意思，true，false效果一样
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8500/eureka
+
+feign:
+  hystrix:
+    enabled: true
