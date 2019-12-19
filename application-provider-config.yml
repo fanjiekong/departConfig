@@ -41,7 +41,7 @@ eureka:
 server:
   port: 8085
 spring:
-  profiles: dev
+  profiles: test
   #指定当前微服务对象（提供者）暴露的名称
   application:
     name: kfjmsc-provider-depart
